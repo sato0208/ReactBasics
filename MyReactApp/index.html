@@ -13,14 +13,16 @@
   <script type="text/babel">
     (() => {
 
+      function showMessage(){
+        alert('Hello');
+      }
+
       const name = 'taguchi';
       ReactDOM.render(
         // <p>Hello! {name.toUpperCase()}</p>,
-        <div>
-          <p>Hello</p>
-          <hr/>
-          <p>World</p>
-        </div>,
+        // <div className="box">
+        <div style={{width:100, height: 100, backgroundColor: 'tomato'}}
+        onClick={showMessage}></div>,
         document.getElementById('root')
       );
     })();
