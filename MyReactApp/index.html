@@ -13,8 +13,36 @@
   <script type="text/babel">
     (() => {
 
-      function Counter(props){
-        return <li style={{backgroundColor:props.color}}>0</li>;
+      function Counter(props) {
+
+        // function countUp() {
+        //   alert('count up!');
+        // }
+        // function countUp(color) {
+        //   alert(color);
+        // }
+        function countUp(e, color) {
+          e.preventDefault();
+          alert(color);
+        }
+
+        // return (
+        //   <li style={{backgroundColor:props.color}} onClick={countUp}>
+        //     0
+        //   </li>
+        // );
+        // return (
+        //   <li style={{backgroundColor:props.color}} onClick={() => countUp(props.color)}>
+        //     0
+        //   </li>
+        // );
+        return (
+          <li style={{backgroundColor:props.color}}>
+            <a href="#" onClick={e => countUp(e, props.color)}>
+              0
+            </a>
+          </li>
+        );
       }
 
       ReactDOM.render(
@@ -25,7 +53,6 @@
             <Counter color="limegreen"/>
           </ul>
         </div>,
-
         document.getElementById('root')
       );
     })();
